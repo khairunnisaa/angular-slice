@@ -1,0 +1,80 @@
+<div id="activity" class="mb-3">
+    <div class="row mb-3">
+      <div class="col-lg-12">
+        <div class="d-flex justify-content-between">
+          <h4 style="font-weight: 500; color: #f4e3cf">Activity</h4>
+          <h6 class="mt-2" style="color: #f4e3cf">View Timeline / Filter Activities</h6>
+        </div>
+      </div>
+    </div>
+    <hr style="color: #f4e3cf">
+
+  @for (list of activity; track list) {
+    <div class="row mb-3 box "id="list-activity">
+      <div class="col-md-4">
+        <img
+          [src]="list.image"
+          class="img-fluid rounded-0" />
+      </div>
+      <div class="col-md-7">
+        <div class="card-body">
+          <div class="d-inline">
+            <p>
+              <span style="font-size: large; font-weight: 500; color: #f4e3cf">{{list.name}}</span>
+              <small class="fw-light" style="color: #f4e3cf"> {{list.status}}</small>
+            </p>
+          </div>
+          <div style="color: #f4e3cf; margin-top: -5px; font-size: 12px">
+            {{list.comment}}
+          </div>
+          <p class="card-text">
+            <small  style="color: #f4e3cf; font-size: 9px">
+              <i [class]="list.icon"></i> {{list.datePost}}
+            </small>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <button type="button"
+                id="button-close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  }
+
+    <hr style="color: #f4e3cf">
+  </div>
+
+
+<!-- CHANNELS -->
+  <div id="channel" class=" mb-3" style="margin-top: 20%;">
+
+    <div class="d-flex justify-content-between">
+      <h4 style="font-weight: 500; color: #f4e3cf">Channels</h4>
+      <h6 class="mt-2" style="color: #f4e3cf">Browse all channels</h6>
+    </div>
+
+    <hr style="color: #f4e3cf">
+
+    <div class="row mb-3">
+      @for (listChannel of channel; track listChannel) {
+        <div class="col-lg-6">
+          <a href="#" class="img-caption mb-0">
+            <figure>
+              <img
+                [src]="listChannel.image"
+                alt="image" />
+              <figcaption>
+                <h3>{{ listChannel.nameChannel }}</h3>
+                <span>{{listChannel.nameChannel}}</span>
+              </figcaption>
+            </figure>
+          </a>
+
+        </div>
+      }
+
+    </div>
+    <hr style="color: #f4e3cf">
+  </div>
